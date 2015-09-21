@@ -1,0 +1,24 @@
+{
+  "name": "toy-robot",
+  "version": "1.0.0",
+  "description": "Code challenge for lookahead",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register --require ./test/test_helper.js  --recursive",
+    "test:watch": "npm run test --watch",
+    "lint": "eslint index.js src/**/*.js"
+  },
+  "author": "Joachim Bachstätter",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-eslint": "^4.1.3",
+    "chai": "^3.3.0",
+    "chai-immutable": "^1.3.0",
+    "eslint": "^1.5.0",
+    "mocha": "^2.3.3"
+  },
+  "dependencies": {
+    "immutable": "^3.7.5"
+  }
+}
