@@ -67,3 +67,75 @@ export function move(state) {
 	}
 	return state;
 }
+
+/**
+ * Rotate left.
+ * @param  {String} facing
+ * @return {String}
+ */
+function rotateLeft(facing){
+	switch(facing){
+		case 'NORTH':
+			return 'WEST';
+		case 'SOUTH':
+			return 'EAST';
+		case 'EAST':
+			return 'NORTH';
+		case 'WEST':
+			return 'SOUTH';
+	}
+}
+
+/**
+ * Rotate right.
+ * @param  {String} facing
+ * @return {String}
+ */
+function rotateRight(facing){
+	switch(facing){
+		case 'NORTH':
+			return 'EAST';
+		case 'SOUTH':
+			return 'WEST';
+		case 'EAST':
+			return 'SOUTH';
+		case 'WEST':
+			return 'NORTH';
+	}
+}
+
+/**
+ * Checks which direction to rotate and calls apropiate function.
+ * I moved out the rotateRight | rotateLeft logic to keep the complexity low.
+ *
+ * @param  {String} direction
+ * @return {String}
+ */
+function makeCorrectRotation(direction){
+	return facing =>{
+		if(direction === 'LEFT'){
+			return rotateLeft(facing);
+		}
+		if(direction === 'RIGHT'){
+			return rotateRight(facing);
+		}
+	};
+}
+
+/**
+ * Rotates the robot with help of makeCorrectRotation.
+ * If robot not been placed return old state.
+ *
+ * @param  {Immutable.Map} state
+ * @param  {String} rotateDirection
+ * @return {Immutable.Map}
+ */
+export function rotate(state, rotateDirection) {
+		if(!state.get('isPlaced')){
+			return state;
+		}
+		if(rotateDirection !== 'LEFT' && rotateDirection !== 'RIGHT'){
+			return state;
+		}
+		return state.update('facing', makeCorrectRotation(rotateDirection));
+}
