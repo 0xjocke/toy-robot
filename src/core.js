@@ -34,9 +34,9 @@ export function place(state, placeValues) {
  * @param  {String} change
  * @return {Int}
  */
-function makeCorrectMove(change){
+function makeCorrectMove(change,maximumValue){
 	return position =>{
-		if(change === 'increase' && position !== 4){
+		if(change === 'increase' && position +1 !== maximumValue){
 			return position + 1;
 		}
 		if(change === 'decrease' && position !== 0){
@@ -59,11 +59,11 @@ export function move(state) {
 	}
 	switch (state.get('facing')) {
 	case 'NORTH':
-	  return state.updateIn(['position', 'y'], makeCorrectMove('increase'));
+	  return state.updateIn(['position', 'y'], makeCorrectMove('increase', state.getIn(['tableSize', 'y'])));
 	case 'SOUTH':
 	  return state.updateIn(['position', 'y'], makeCorrectMove('decrease'));
 	case 'EAST':
-		return state.updateIn(['position', 'x'], makeCorrectMove('increase'));
+		return state.updateIn(['position', 'x'], makeCorrectMove('increase', state.getIn(['tableSize', 'x'])));
 	case 'WEST':
 		return state.updateIn(['position', 'x'], makeCorrectMove('decrease'));
 	}

@@ -18,8 +18,8 @@ describe('core place function', () => {
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 1, y: 1}),
 			facing: 'WEST'
@@ -37,8 +37,8 @@ describe('core place function', () => {
 			expect(nextState).to.equal(Map({
 				isPlaced: true,
 				tableSize: Map({
-					width: 5,
-					height:5
+					x: 5,
+					y:5
 				}),
 				position: Map({x: 1, y: 1}),
 				facing: 'WEST'
@@ -59,6 +59,7 @@ describe('core place function', () => {
 		};
 		const nextStateInvalidX = place(state, placeValuesInvalidX);
 		const nextStateInvalidY = place(state, placeValuesInvalidY);
+		console.log('nextStateInvalidX',nextStateInvalidX);
 		expect(nextStateInvalidX).to.equal(state);
 		expect(nextStateInvalidY).to.equal(state);
 
@@ -68,8 +69,8 @@ describe('core place function', () => {
 		const state = Map({
 				isPlaced: true,
 				tableSize: Map({
-					width: 5,
-					height:5
+					x: 5,
+					y:5
 				}),
 				position: Map({x: 1, y: 1}),
 				facing: 'EAST'
@@ -83,8 +84,8 @@ describe('core place function', () => {
 		expect(nextState).to.equal(Map({
 				isPlaced: true,
 				tableSize: Map({
-					width: 5,
-					height:5
+					x: 5,
+					y:5
 				}),
 				position: Map({x: 1, y: 3}),
 				facing: 'NORTH'

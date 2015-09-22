@@ -10,8 +10,8 @@ describe('core move function', () => {
 		const state = Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 1, y: 3}),
 			facing: 'NORTH'
@@ -20,8 +20,8 @@ describe('core move function', () => {
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 1, y: 4}),
 			facing: 'NORTH'
@@ -31,8 +31,8 @@ describe('core move function', () => {
 		const state = Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 2, y: 3}),
 			facing: 'SOUTH'
@@ -41,8 +41,8 @@ describe('core move function', () => {
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 2, y: 2}),
 			facing: 'SOUTH'
@@ -52,8 +52,8 @@ describe('core move function', () => {
 		const state = Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 2, y: 3}),
 			facing: 'EAST'
@@ -62,8 +62,8 @@ describe('core move function', () => {
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 3, y: 3}),
 			facing: 'EAST'
@@ -73,8 +73,8 @@ describe('core move function', () => {
 		const state = Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 2, y: 3}),
 			facing: 'WEST'
@@ -83,8 +83,8 @@ describe('core move function', () => {
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 1, y: 3}),
 			facing: 'WEST'
@@ -94,8 +94,8 @@ describe('core move function', () => {
 		const state = Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 0, y: 3}),
 			facing: 'WEST'
@@ -104,8 +104,8 @@ describe('core move function', () => {
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 0, y: 3}),
 			facing: 'WEST'
@@ -115,8 +115,8 @@ describe('core move function', () => {
 		const state = Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 4, y: 3}),
 			facing: 'EAST'
@@ -125,8 +125,8 @@ describe('core move function', () => {
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 4, y: 3}),
 			facing: 'EAST'
@@ -136,8 +136,8 @@ describe('core move function', () => {
 		const state = Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 4, y: 4}),
 			facing: 'NORTH'
@@ -146,8 +146,8 @@ describe('core move function', () => {
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 4, y: 4}),
 			facing: 'NORTH'
@@ -157,8 +157,8 @@ describe('core move function', () => {
 		const state = Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 4, y: 0}),
 			facing: 'SOUTH'
@@ -167,8 +167,8 @@ describe('core move function', () => {
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 4, y: 0}),
 			facing: 'SOUTH'
@@ -177,8 +177,8 @@ describe('core move function', () => {
 	it('should not move if robot hasnt been placed', () => {
 		const state = Map({
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 3, y: 3}),
 			facing: 'SOUTH'

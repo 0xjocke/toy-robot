@@ -15,8 +15,8 @@ describe('reducer', () => {
 	  expect(nextState).to.equal(Map({
 	  	isPlaced: true,
 	  	tableSize: Map({
-	  		width: 5,
-	  		height:5
+	  		x: 5,
+	  		y:5
 	  	}),
 	  	position: Map({x: 1, y: 3}),
 	  	facing: 'NORTH'
@@ -35,8 +35,8 @@ describe('reducer', () => {
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 1, y: 3}),
 			facing: 'NORTH'
@@ -47,8 +47,8 @@ describe('reducer', () => {
 		const initialState = Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 1, y: 3}),
 			facing: 'NORTH'
@@ -59,8 +59,8 @@ describe('reducer', () => {
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 1, y: 4}),
 			facing: 'NORTH'
@@ -71,8 +71,8 @@ describe('reducer', () => {
 		const initialState = Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 1, y: 3}),
 			facing: 'NORTH'
@@ -83,8 +83,8 @@ describe('reducer', () => {
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 1, y: 3}),
 			facing: 'WEST'
@@ -94,8 +94,8 @@ describe('reducer', () => {
 		const initialState = Map({
 			isPlaced: true,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 1, y: 3}),
 			facing: 'NORTH'
@@ -107,8 +107,8 @@ describe('reducer', () => {
 			isPlaced: true,
 			haveReportet: 1,
 			tableSize: Map({
-				width: 5,
-				height:5
+				x: 5,
+				y:5
 			}),
 			position: Map({x: 1, y: 3}),
 			facing: 'NORTH'
@@ -129,8 +129,8 @@ describe('reducer', () => {
 	 	  	isPlaced: true,
 	 	  	haveReportet:1,
 	 	  	tableSize: Map({
-	 	  		width: 5,
-	 	  		height:5
+	 	  		x: 5,
+	 	  		y:5
 	 	  	}),
 	 	  	position: Map({x: 3, y: 3}),
 	 	  	facing: 'NORTH'

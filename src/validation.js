@@ -19,8 +19,8 @@ function isNumberAnInteger(number){
  */
 function validatePosition(placeValues){
 	const isNegativeNumber = placeValues.get('y') < 0 || placeValues.get('x') < 0,
-		  xIsBiggerThanTableSize = placeValues.get('x') > TABLE_SIZE.get('width'),
-		  yIsBiggerThanTableSize = placeValues.get('y') > TABLE_SIZE.get('height');
+		  xIsBiggerThanTableSize = placeValues.get('x') > TABLE_SIZE.get('x'),
+		  yIsBiggerThanTableSize = placeValues.get('y') > TABLE_SIZE.get('y');
 
 	if(!isNumberAnInteger(placeValues.get('y')) ||
 	   !isNumberAnInteger(placeValues.get('x')) ){
