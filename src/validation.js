@@ -1,5 +1,5 @@
 import {Map} from 'immutable';
-import {TABLE_SIZE} from '../index.js';
+import {TABLE_SIZE} from './core.js';
 
 /**
  * Checks if number is and Integer

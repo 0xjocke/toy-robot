@@ -19,6 +19,7 @@
     "mocha": "^2.3.3"
   },
   "dependencies": {
+    "colors": "^1.1.2",
     "immutable": "^3.7.5",
     "redux": "^3.0.0"
   }

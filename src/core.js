@@ -1,6 +1,10 @@
 import {Map} from 'immutable';
 import {validatePlaceValues} from './validation.js';
-import {TABLE_SIZE} from '../index.js';
+
+export const TABLE_SIZE = Map({
+	x:5,
+	y:5
+});
 export const INITIAL_STATE = Map();
 
 
