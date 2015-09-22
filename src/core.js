@@ -139,3 +139,17 @@ export function rotate(state, rotateDirection) {
 		}
 		return state.update('facing', makeCorrectRotation(rotateDirection));
 }
+
+/**
+ * Reports current postions if robot have benn placed.
+ * Also upddates the state to keep track of how many times we have reportet our position.
+ * @param  {Immutable.Map} state
+ * @return {Immutable.Map}
+ */
+export function report(state){
+	if(!state.get('isPlaced')){
+		return state;
+	}
+	console.log(`My x cordinate is ${state.getIn(['position', 'x'])} and my y ${state.getIn(['position', 'y'])}. I'm facing ${state.get('facing')}`)
+	return state.update('haveReportet', 0, timesReportet => timesReportet + 1);
+}

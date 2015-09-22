@@ -1,7 +1,7 @@
 import {List, Map} from 'immutable';
 import {expect} from 'chai';
 
-import {placeRobot, move, rotate} from '../src/core';
+import {placeRobot} from '../src/core';
 
 
 
