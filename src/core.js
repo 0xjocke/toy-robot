@@ -9,7 +9,7 @@ import {TABLE_SIZE} from '../index.js';
  * @param  {Object || Immutable.Map} placeValues
  * @return {Immutable.Map}
  */
-export function placeRobot(state, placeValues) {
+export function place(state, placeValues) {
 	const immbutablePlaceValues = Map(placeValues);
 	if(!validatePlaceValues(immbutablePlaceValues)){
 		return state;
@@ -150,6 +150,6 @@ export function report(state){
 	if(!state.get('isPlaced')){
 		return state;
 	}
-	console.log(`My x cordinate is ${state.getIn(['position', 'x'])} and my y ${state.getIn(['position', 'y'])}. I'm facing ${state.get('facing')}`)
+	console.log(`My x cordinate is ${state.getIn(['position', 'x'])} and my y ${state.getIn(['position', 'y'])}. I'm facing ${state.get('facing')}`);
 	return state.update('haveReportet', 0, timesReportet => timesReportet + 1);
 }

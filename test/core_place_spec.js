@@ -1,11 +1,11 @@
 import {List, Map} from 'immutable';
 import {expect} from 'chai';
 
-import {placeRobot} from '../src/core';
+import {place} from '../src/core';
 
 
 
-describe('placeRobot', () => {
+describe('core place function', () => {
 
 	it('place to robot on correct cordinates and direction', () => {
 		const state = Map();
@@ -14,7 +14,7 @@ describe('placeRobot', () => {
 			y:1,
 			f: 'WEST'
 		});
-		const nextState = placeRobot(state, placeValues);
+		const nextState = place(state, placeValues);
 		expect(nextState).to.equal(Map({
 			isPlaced: true,
 			tableSize: Map({
@@ -33,7 +33,7 @@ describe('placeRobot', () => {
 			y:1,
 			f: 'WEST'
 		};
-		const nextState = placeRobot(state, placeValues);
+		const nextState = place(state, placeValues);
 			expect(nextState).to.equal(Map({
 				isPlaced: true,
 				tableSize: Map({
@@ -57,8 +57,8 @@ describe('placeRobot', () => {
 			y:9,
 			f: 'WEST'
 		};
-		const nextStateInvalidX = placeRobot(state, placeValuesInvalidX);
-		const nextStateInvalidY = placeRobot(state, placeValuesInvalidY);
+		const nextStateInvalidX = place(state, placeValuesInvalidX);
+		const nextStateInvalidY = place(state, placeValuesInvalidY);
 		expect(nextStateInvalidX).to.equal(state);
 		expect(nextStateInvalidY).to.equal(state);
 
@@ -79,7 +79,7 @@ describe('placeRobot', () => {
 			y:3,
 			f: 'NORTH'
 		};
-		const nextState = placeRobot(state, placeValues);
+		const nextState = place(state, placeValues);
 		expect(nextState).to.equal(Map({
 				isPlaced: true,
 				tableSize: Map({
@@ -102,8 +102,8 @@ describe('placeRobot', () => {
 			y:3.1,
 			f: 'EAST'
 		};
-		const nextStateInvalidY = placeRobot(state, placeValuesInvalidX);
-		const nextStateInvalidX = placeRobot(state, placeValuesInvalidY);
+		const nextStateInvalidY = place(state, placeValuesInvalidX);
+		const nextStateInvalidX = place(state, placeValuesInvalidY);
 		expect(nextStateInvalidY).to.equal(state);
 		expect(nextStateInvalidX).to.equal(state);
 	});
@@ -119,8 +119,8 @@ describe('placeRobot', () => {
 			y: -4,
 			f: 'EAST'
 		};
-		const nextStateInvalidY = placeRobot(state, placeValuesInvalidX);
-		const nextStateInvalidX = placeRobot(state, placeValuesInvalidY);
+		const nextStateInvalidY = place(state, placeValuesInvalidX);
+		const nextStateInvalidX = place(state, placeValuesInvalidY);
 		expect(nextStateInvalidY).to.equal(state);
 		expect(nextStateInvalidX).to.equal(state);
 	});
@@ -132,7 +132,7 @@ describe('placeRobot', () => {
 			y:3,
 			f: 'MIDDLE'
 		};
-		const nextState = placeRobot(state, placeValues);
+		const nextState = place(state, placeValues);
 		expect(nextState).to.equal(Map());
 	});
 });

@@ -4,7 +4,7 @@ import {expect} from 'chai';
 import {report} from '../src/core';
 
 
-describe('report', () => {
+describe('core report function', () => {
 	it('should report is current postion and which way its facing', () => {
 			const state = Map({
 				isPlaced: true,

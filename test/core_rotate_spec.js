@@ -2,7 +2,7 @@ import {List, Map} from 'immutable';
 import {expect} from 'chai';
 import {rotate} from '../src/core';
 
-describe('rotate', () => {
+describe('core rotate function', () => {
 	it('should rotate to West if State is NORTH and action LEFT', () => {
 		const state = Map({
 			isPlaced: true,

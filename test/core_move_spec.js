@@ -5,7 +5,7 @@ import {move} from '../src/core';
 
 
 
-describe('move', () => {
+describe('core move function', () => {
 	it('should move one unit North when facing North', () => {
 		const state = Map({
 			isPlaced: true,
