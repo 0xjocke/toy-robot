@@ -1,6 +1,8 @@
 import {Map} from 'immutable';
 import {validatePlaceValues} from './validation.js';
 import {TABLE_SIZE} from '../index.js';
+export const INITIAL_STATE = Map();
+
 
 
 /**
