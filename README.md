@@ -33,7 +33,7 @@ You can also run the test suite with:
 
 ## Design decisions and dependencies
 
-I choosed to develop in functional way. There is no mutation and the application is built up of pure/stateless functions. You wont find any *this* in this codebase.
+I choosed to develop in a functional way. There is no mutation and the application is built up of pure/stateless functions. You wont find any *this* in this codebase.
 I used  a test driven appoach, writing unit test with Mocha as testing library and Chai as assertion/expectation library before doing implementations. To help me not forgetting semi-colons and write with a consistent style I used ESLint.
 
 I used Redux to help me manage the applications state. Redux keeps the whole applications state in a single immutable object.
@@ -41,4 +41,4 @@ This makes the application very scalable and predictable. It's also really nice 
 
 Since Redux favours immutability I choosed to use Immutable.js to provide the data structures. It would be totally fine to use regular objects/arrays but then sooner or later someone's going to mutate.
 
-When you run ```$ npm start``` ```node-babel index.js``` will be executed. If this was a bigger application going to production using babel-node would porbably not be the best idea, since it compiles the JavaScript files on the fly. For this small CLI program I think its fine though, its start in under a second. The main reason I use babel instead of just using Node.js ES2015 features is because Node.js doesn't support the new module syntax yet.
+When you run ```$ npm start``` ```node-babel index.js``` will be executed. If this was a bigger application going to production using babel-node would probably not be the best idea, since it compiles the JavaScript files on the fly. For this small CLI program I think its fine though, since its start in under a second. The main reason I use babel instead of just using Node.js ES2015 features is because Node.js doesn't support the new module syntax yet.
