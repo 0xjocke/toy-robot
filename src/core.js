@@ -17,12 +17,13 @@ export const INITIAL_STATE = Map();
  */
 export function place(state, placeValues) {
 	const immbutablePlaceValues = Map(placeValues);
-	if(!validatePlaceValues(immbutablePlaceValues)){
+	const tableSize = state.get('tableSize', TABLE_SIZE);
+	if(!validatePlaceValues(immbutablePlaceValues,tableSize)){
 		return state;
 	}
   return state
   	.set('isPlaced', true)
-  	.set('tableSize', TABLE_SIZE)
+  	.set('tableSize', tableSize)
   	.set('position', Map({
   		x: immbutablePlaceValues.get('x'),
   		y: immbutablePlaceValues.get('y')
@@ -46,6 +47,7 @@ function makeCorrectMove(change,maximumValue){
 		if(change === 'decrease' && position !== 0){
 			return position - 1;
 		}
+		console.log('Are you trying to kill me?');
 		return position;
 	};
 };
@@ -59,6 +61,7 @@ function makeCorrectMove(change,maximumValue){
  */
 export function move(state) {
 	if(!state.get('isPlaced')){
+		console.log('I\'m not even on the table');
 		return state;
 	}
 	switch (state.get('facing')) {
@@ -138,6 +141,7 @@ function makeCorrectRotation(direction){
  */
 export function rotate(state, rotateDirection) {
 		if(!state.get('isPlaced')){
+			console.log('I\'m not even on the table');
 			return state;
 		}
 		if(rotateDirection !== 'LEFT' && rotateDirection !== 'RIGHT'){
@@ -156,6 +160,6 @@ export function report(state){
 	if(!state.get('isPlaced')){
 		return state;
 	}
-	console.log(`My x cordinate is ${state.getIn(['position', 'x'])} and my y ${state.getIn(['position', 'y'])}. I'm facing ${state.get('facing')}`);
+	console.log(`My X cordinate is ${state.getIn(['position', 'x'])} and my Y ${state.getIn(['position', 'y'])}. I'm facing ${state.get('facing')}`);
 	return state.update('haveReportet', 0, timesReportet => timesReportet + 1);
 }

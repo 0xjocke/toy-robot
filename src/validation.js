@@ -1,13 +1,33 @@
 import {Map} from 'immutable';
-import {TABLE_SIZE} from './core.js';
 
 /**
  * Checks if number is and Integer
  * @param  {int}  number
  * @return {Boolean}
  */
-function isNumberAnInteger(number){
-	return typeof number ==='number' && (number%1) === 0;
+function isNotAnInteger(number){
+	if(typeof number ==='number' && (number%1) === 0){
+		return false;
+	}
+	console.log('I didn\'t understand that coordinate.');
+	return true;
+}
+
+function isCoordinateBiggerThanTableSize(placeValues, tableSize){
+	if(placeValues.get('x') > tableSize.get('x') ||
+	   placeValues.get('y') > tableSize.get('y')){
+		console.log('That\'s not on the table.');
+		return true;
+	}
+	return false;
+}
+
+function isNegativeNumber(placeValues){
+	if(placeValues.get('y') < 0 || placeValues.get('x') < 0){
+		console.log('That\'s not on the table.');
+		return true;
+	}
+	return false;
 }
 
 /**
@@ -17,21 +37,11 @@ function isNumberAnInteger(number){
  * @param  {Immutable.Map} placeValues
  * @return {Boolean}
  */
-function validatePosition(placeValues){
-	const isNegativeNumber = placeValues.get('y') < 0 || placeValues.get('x') < 0,
-		  xIsBiggerThanTableSize = placeValues.get('x') > TABLE_SIZE.get('x'),
-		  yIsBiggerThanTableSize = placeValues.get('y') > TABLE_SIZE.get('y');
-
-	if(!isNumberAnInteger(placeValues.get('y')) ||
-	   !isNumberAnInteger(placeValues.get('x')) ){
-		return false;
-	}
-
-	if(isNegativeNumber){
-		return false;
-	}
-
-	if(xIsBiggerThanTableSize || yIsBiggerThanTableSize){
+function validatePosition(placeValues, tableSize){
+	if(isNotAnInteger(placeValues.get('y')) ||
+	   isNotAnInteger(placeValues.get('x')) ||
+	   isNegativeNumber(placeValues)		||
+	   isCoordinateBiggerThanTableSize(placeValues, tableSize)){
 		return false;
 	}
 	return true;
@@ -49,7 +59,11 @@ function validateFacing(placeValues){
 		EAST: true,
 		WEST: true
 	});
-	return validFacingValue.has(placeValues.get('f'));
+	if(validFacingValue.has(placeValues.get('f'))){
+		return true;
+	}else{
+		console.log('NORTH, EAST, SOUTH or WEST please.');
+	}
 }
 
 /**
@@ -57,11 +71,11 @@ function validateFacing(placeValues){
  * @param  {Immutable.Map} placeValues
  * @return {Boolean}
  */
-export function validatePlaceValues(placeValues){
+export function validatePlaceValues(placeValues, tableSize){
 	if(!validateFacing(placeValues)){
 		return false;
 	}
-	if(!validatePosition(placeValues)){
+	if(!validatePosition(placeValues,tableSize)){
 		return false;
 	}
 	return true;
