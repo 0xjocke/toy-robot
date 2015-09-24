@@ -6,7 +6,7 @@ Toy-robot is a program that lets you drive a robot from your terminal. He drives
 * LEFT                - *Rotates 90 degrees to left*
 * RIGHT               - *Rotates 90 degrees to right*
 * REPORT              - *Reports current position and facing direction*
-* READ path/file.txt  - *Reads a .txt file if it has valid commands*
+* READ path/file.txt  - *Reads a .txt file if it has valid commands. Some example files are provided in the textfiles folder*
 
 He won't listen to any command until he has been placed. He is also undestructable which means he doesn't respond to commands that would make him fall down from the table. If he can't act on command he will try to tell you why.
 Check out the  [Code Challenge](challenge.md).
