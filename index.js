@@ -36,8 +36,14 @@ console.log('Also note that he wont listen to any commands if you havn\'t placed
 console.log();
 
 function handleLineInput(input){
-	const action = handleCommand(input);
-	if(action){
+	const action = handleCommand(input)
+	if(!action){
+		return readline.prompt();
+	}
+	if(Array.isArray(action)){
+
+		action.forEach(store.dispatch);
+	}else{
 		store.dispatch(action);
 	}
 	readline.prompt();

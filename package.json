@@ -7,7 +7,8 @@
     "start": "babel-node index.js",
     "test": "mocha --compilers js:babel/register --require ./test/test_helper.js  --recursive",
     "test:watch": "npm run test -- --watch",
-    "lint": "eslint index.js src/**/*.js"
+    "lint": "eslint index.js src/**/*.js",
+    "build": "babel index.js -o lib/index.js && babel src -d lib/src"
   },
   "author": "Joachim Bachstätter",
   "license": "ISC",
