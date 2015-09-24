@@ -1,8 +1,8 @@
 #!/usr/bin/env babel-node
+
 import makeStore from './src/store';
 import {handleCommand} from './src/parser';
-
-require('colors');
+import 'colors';
 const readline = require('readline')
 .createInterface({
 	input: process.stdin,
@@ -36,16 +36,8 @@ console.log('Also note that he wont listen to any commands if you havn\'t placed
 console.log();
 
 function handleLineInput(input){
-	const action = handleCommand(input)
-	if(!action){
-		return readline.prompt();
-	}
-	if(Array.isArray(action)){
-
-		action.forEach(store.dispatch);
-	}else{
-		store.dispatch(action);
-	}
+	const action = handleCommand(input);
+	action.forEach(store.dispatch);
 	readline.prompt();
 }
 
@@ -56,7 +48,7 @@ readline
 	process.exit(0);
 })
 .setPrompt('Robot> ');
-readline.prompt()
+readline.prompt();
 
 
 
