@@ -13,7 +13,7 @@ const store = makeStore();
 console.log('Welcome to toy robot.'.green.bold);
 console.log('');
 console.log('These are valid command:'.bold);
-console.log('PLACE x y f'.bold.underline);
+console.log('PLACE x,y,f'.bold.underline);
 console.log('- Where x and y is coordinates and f (facing) must be either NORTH, SOUTH, WEST or EAST');
 console.log('MOVE'.bold.underline);
 console.log('- Will move the robot one unit in current direct');
