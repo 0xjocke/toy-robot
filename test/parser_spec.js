@@ -24,8 +24,8 @@ describe('Parser', () => {
 			}
 		}]);
 	});
-	it('it can parse a text file to acions', () => {
-		expect(handleCommand('READ textfiles/example.txt')).to.deep.equal([
+	it('it can parse a text file to actions', () => {
+		expect(handleCommand('READ ./textfiles/example.txt')).to.deep.equal([
 			 	{
 				 	type:'PLACE',
 				 	position:{
@@ -51,7 +51,7 @@ describe('Parser', () => {
 			 ]);
 	});
 	it('it can parse a text file with newlines between commands', () => {
-		expect(handleCommand('READ textfiles/example1.txt')).to.deep.equal([
+		expect(handleCommand('READ ./textfiles/example1.txt')).to.deep.equal([
 			{
 				position: {
 					f: 'NORTH',
