@@ -24,51 +24,51 @@ describe('Parser', () => {
 			}
 		}]);
 	});
-	it('it can parse a text file to actions', () => {
-		expect(handleCommand('READ ./textfiles/example.txt')).to.deep.equal([
-			 	{
-				 	type:'PLACE',
-				 	position:{
-				 		x:1, y:2, f:'EAST'
-				 	}
-				},
-				{
-					type: 'MOVE'
-				},
-				{
-					type: 'MOVE'
-				},
-				{
-					type: 'ROTATE',
-					direction: 'LEFT'
-				},
-				{
-					type: 'MOVE'
-				},
-				{
-					type:'REPORT'
-				}
-			 ]);
-	});
-	it('it can parse a text file with newlines between commands', () => {
-		expect(handleCommand('READ ./textfiles/example1.txt')).to.deep.equal([
-			{
-				position: {
-					f: 'NORTH',
-					x: 0,
-					y: 0
-			},
-				type: 'PLACE'
-			},
-			{
-				direction: 'LEFT',
-				type: 'ROTATE'
-			},
-			{
-				type: 'REPORT'
-			}
-		])
-	});
+	// it('it can parse a text file to actions', () => {
+	// 	expect(handleCommand('READ ./textfiles/example.txt')).to.deep.equal([
+	// 		 	{
+	// 			 	type:'PLACE',
+	// 			 	position:{
+	// 			 		x:1, y:2, f:'EAST'
+	// 			 	}
+	// 			},
+	// 			{
+	// 				type: 'MOVE'
+	// 			},
+	// 			{
+	// 				type: 'MOVE'
+	// 			},
+	// 			{
+	// 				type: 'ROTATE',
+	// 				direction: 'LEFT'
+	// 			},
+	// 			{
+	// 				type: 'MOVE'
+	// 			},
+	// 			{
+	// 				type:'REPORT'
+	// 			}
+	// 		 ]);
+	// });
+	// it('it can parse a text file with newlines between commands', () => {
+	// 	expect(handleCommand('READ ./textfiles/example1.txt')).to.deep.equal([
+	// 		{
+	// 			position: {
+	// 				f: 'NORTH',
+	// 				x: 0,
+	// 				y: 0
+	// 		},
+	// 			type: 'PLACE'
+	// 		},
+	// 		{
+	// 			direction: 'LEFT',
+	// 			type: 'ROTATE'
+	// 		},
+	// 		{
+	// 			type: 'REPORT'
+	// 		}
+	// 	])
+	// });
 	it('It doesnt read empty string', () => {
 		expect(handleCommand('READ ').length).to.not.be.ok
 	})
